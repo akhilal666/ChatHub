@@ -1,0 +1,137 @@
+﻿@{
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    ViewBag.Title = "Home Page";
+<style>
+    .modal-dialog {
+    right: auto;
+    left: 50%;
+    width: 454px;
+    padding-top: 225px !important;
+    padding-bottom: 30px;
+}
+    .btn-danger {
+        color: #ffffff;
+        background-color: #d9534f;
+        border-color: #d43f3a;
+        border-radius: 40px !important;
+    }
+    .btn-warning {
+    color: #ffffff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    border-radius: 40px !important;
+}
+    .msg {
+    margin-bottom: 5px;
+    margin-top: 2px;
+    margin-left: -5px;
+}
+    .msgbox{
+            width: 100%;
+    margin-bottom: 5px;
+    }
+    .btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    margin-top: -11px;
+    vertical-align: middle;
+}
+    .panel-body {
+    padding: 15px;
+    border-style: dashed;
+    border-width: thin;
+}
+    div#welcome-messages {
+   height: 390px;
+       overflow: auto;
+}   
+
+.modal-dialog {
+    right: auto;
+    left: 50%;
+    width: 454px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+[data-letters]:before {
+  content:attr(data-letters);
+  display:inline-block;
+  font-size:1em;
+  width:2.5em;
+  height:2.5em;
+  line-height:2.5em;
+  text-align:center;
+  border-radius:50%;
+  background:plum;
+  vertical-align:middle;
+  margin-right:1em;
+  color:white;
+  }
+
+.p {
+    margin: -1px 36px -4px;
+}
+</style>
+}
+
+<div class="panel-body" >
+    <div class="row">
+        <div class="col-md-12">
+            <div id="welcome-messages">
+               
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-3 col-xs-8">
+            <input type="text" class="form-control msgbox" id="txtInput" />
+        </div>
+        <div class="col-md-6 col-xs-4">
+            <input type="file" class="hidden" id="fileinput" />
+            <p id="imgBase64"></p>
+            
+            <button type="button" value="" id="pic" class="btn btn-warning btn-group"><i class="fa fa-file-image-o"></i></button>
+            <button type="button" value="" id="click-me" class="btn btn-danger btn-group"><i class="fa fa-paper-plane"></i></button>
+        </div>
+
+    </div>
+  
+</div>
+
+<div class="modal fade " id="myModal" >
+    <div class="modal-dialog ">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+             @*   <button type="button" class="close" data-dismiss="modal">&times;</button>*@
+                <h4 class="modal-title">Your Name?</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-8">
+                           <input type="text" class="form-control" id="txtName" />
+                      
+                    </div>
+                    <div class="col-xs-4">
+                        <button type="button" class="btn btn-info" id="btnOk">Ok</button>
+
+                    </div>
+                </div>
+             
+            </div>
+           
+        </div>
+
+    </div>
+</div>
+
+
+@section scripts {
+
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/js"></script>
+    <script src="~/Scripts/SignalR.js"></script>
+    <script src="~/Scripts/fileupload.js"></script>
+}
